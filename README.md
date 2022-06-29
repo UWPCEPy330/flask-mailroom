@@ -1,5 +1,6 @@
 # Flask Mailroom Application
 
+(Replace the link below with your own when submitting the assignment)
 Running at [http://afternoon-reef-51666.herokuapp.com/donations/](http://afternoon-reef-51666.herokuapp.com/donations/).
 
 ## Your Task
