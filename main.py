@@ -6,8 +6,8 @@ from flask import Flask, render_template, request, redirect, url_for
 from model import Donation, Donor
 
 app = Flask(__name__)
-#app.secret_key = b'\x9d\xd1u\x08%\xe0\xd0p\x9bEL\xf8JC\xa3\xf4J(hAh\xa4\xcdw\x12S*,u\xec\xb8\xb8'
-app.secret_key = os.environ.get('SECRET_KEY').encode()
+app.secret_key = b'\x9d\xd1u\x08%\xe0\xd0p\x9bEL\xf8JC\xa3\xf4J(hAh\xa4\xcdw\x12S*,u\xec\xb8\xb8'
+#app.secret_key = os.environ.get('SECRET_KEY').encode()
 
 @app.route('/')
 def home():
@@ -18,7 +18,7 @@ def all():
     donations = Donation.select()
     return render_template('donations.jinja2', donations=donations)
     
-@app.route('/create',methods=['GET','POST'])
+@app.route('/create/',methods=['GET','POST'])
 def create():
     if request.method == 'POST':
         donor = request.form['name']
